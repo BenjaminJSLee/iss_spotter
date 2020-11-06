@@ -6,7 +6,7 @@ const fetchMyIP = function(callback) {
     if (error) {
       callback(error,null);
     } else if (response && (response.statusCode < 200 || response.statusCode >= 300)) {
-      callback(Error(`Error ${response.statusCode}`),null);
+      callback(Error(`Error ${response.statusCode}: ${body}`),null);
     } else {
       callback(null,JSON.parse(body).ip);
     }

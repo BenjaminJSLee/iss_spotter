@@ -2,7 +2,7 @@ const { nextISSTimesForMyLocation } = require('./iss');
 
 nextISSTimesForMyLocation((error, passTimes) => {
   if (error) {
-    return console.log("It didn't work!", error);
+    return console.error("Error:", error);
   }
   // success, print out the deets!
   for (let obj of passTimes) {
